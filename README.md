@@ -27,3 +27,10 @@ Live site link (https://simple-blog-eight-alpha.vercel.app/)
 #### User can give like/dislike in a comment
 
 #### User can comment in a Article
+
+# To run this app first git clone and go the repo and run,
+
+```
+yarn
+yarn dev
+```
