@@ -6,6 +6,8 @@ export interface IArticleState {
   category?: string;
   tags?: string[];
   createby?: IArticleCreator;
+  likes?: number;
+  dislikes?: number;
 }
 
 export interface IArticleCreator {

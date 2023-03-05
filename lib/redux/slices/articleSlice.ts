@@ -2,10 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { IArticleState } from '@/types/article';
 import articles from '@/data/articles';
+import { fetchArticleById } from '../actions/getSingleArticle';
 
 type InitialStateType = {
   articles: IArticleState[];
   filterArticles: IArticleState[];
+  article?: IArticleState;
+  loading?: boolean;
 };
 
 const initialState: InitialStateType = {
@@ -32,6 +35,11 @@ export const articleSlice = createSlice({
         );
       }
     }
+  },
+  extraReducers: builder => {
+    builder.addCase(fetchArticleById.fulfilled, (state, action) => {
+      state.article = action.payload;
+    });
   }
 });
 

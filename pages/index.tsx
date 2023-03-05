@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import { useSelector } from 'react-redux';
 import type { RootState } from '@/redux/store';
 import Card from '@/components/Card';
 import Hero from '@/components/Hero';
+import { useAppSelector } from '@/hooks/hooks';
 
 export default function Home() {
-  const articles = useSelector(
+  const articles = useAppSelector(
     (state: RootState) => state.articles.filterArticles
   );
 
