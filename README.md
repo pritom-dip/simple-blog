@@ -1,6 +1,6 @@
 # Welcome to the Blog App
 
-Live site link
+Live site link (https://simple-blog-eight-alpha.vercel.app/)
 
 # Used NPM Packages ( For Developers )
 
