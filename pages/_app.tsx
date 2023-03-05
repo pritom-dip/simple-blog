@@ -1,15 +1,21 @@
-import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import { store } from '@/redux/store';
 import { Provider } from 'react-redux';
+import { AppProps } from 'next/app';
+import App from '@/components/App';
 import '@/assets/css/main.scss';
-import Layout from '@/components/Layout';
 
-export default function App({ Component, pageProps }: AppProps) {
+function AppWrapper({ Component, pageProps }: AppProps) {
   return (
-    <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>
+    <>
+      <Head>
+        <title>Blog App</title>
+      </Head>
+      <Provider store={store}>
+        <App Component={Component} pageProps={pageProps} />
+      </Provider>
+    </>
   );
 }
+
+export default AppWrapper;

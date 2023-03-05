@@ -10,7 +10,9 @@ const LoginComponent = () => {
 
   const handleClick = async (name: string) => {
     dispatch(login(name));
-    await router.push('/');
+
+    const returnUrl: any = router.query.returnUrl || '/';
+    await router.push(returnUrl);
   };
 
   return (
