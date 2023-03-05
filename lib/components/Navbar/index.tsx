@@ -13,7 +13,7 @@ const menus = [
   },
   {
     name: 'Profile',
-    link: '/user/:id',
+    link: '/profile',
     submenu: [],
     icon: ''
   }
