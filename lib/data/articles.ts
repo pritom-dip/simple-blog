@@ -18,7 +18,9 @@ const articles: IArticleState[] = [
       image: AuthorImage
     },
     category: 'sports',
-    tags: ['premier league', 'england']
+    tags: ['premier league', 'england'],
+    likes: 0,
+    dislikes: 0
   },
   {
     id: 2,
@@ -32,7 +34,9 @@ const articles: IArticleState[] = [
       image: AuthorImage
     },
     category: 'news',
-    tags: ['la league', 'spain']
+    tags: ['la league', 'spain'],
+    likes: 0,
+    dislikes: 0
   },
   {
     id: 3,
@@ -46,7 +50,9 @@ const articles: IArticleState[] = [
       image: AuthorImage
     },
     category: 'shopping',
-    tags: ['aarong', 'estacy']
+    tags: ['aarong', 'estacy'],
+    likes: 0,
+    dislikes: 0
   },
   {
     id: 4,
@@ -60,7 +66,9 @@ const articles: IArticleState[] = [
       image: AuthorImage
     },
     category: 'games',
-    tags: ['cricket', 'football']
+    tags: ['cricket', 'football'],
+    likes: 0,
+    dislikes: 0
   }
 ];
 

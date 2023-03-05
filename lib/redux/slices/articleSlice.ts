@@ -7,13 +7,24 @@ import { fetchArticleById } from '../actions/getSingleArticle';
 type InitialStateType = {
   articles: IArticleState[];
   filterArticles: IArticleState[];
-  article?: IArticleState;
-  loading?: boolean;
+  article: IArticleState;
+  loading: boolean;
 };
 
 const initialState: InitialStateType = {
   articles: articles,
-  filterArticles: articles
+  filterArticles: articles,
+  article: {
+    id: '',
+    title: '',
+    description: '',
+    category: '',
+    tags: [],
+    likes: 0,
+    dislikes: 0,
+    image: ''
+  },
+  loading: false
 };
 
 export const articleSlice = createSlice({
@@ -34,15 +45,39 @@ export const articleSlice = createSlice({
           }
         );
       }
+    },
+    likeArticle: (state, action: PayloadAction<string | number>) => {
+      const articleId = action.payload;
+      const article = state.articles.find(
+        (article: IArticleState) => article.id === +articleId
+      );
+
+      if (article) {
+        article.likes = article.likes + 1;
+        state.article.likes = state.article.likes + 1;
+      }
+    },
+    dislikeArticle: (state, action: PayloadAction<string | number>) => {
+      const articleId = action.payload;
+      const article = state.articles.find(
+        (article: IArticleState) => article.id === +articleId
+      );
+
+      if (article) {
+        article.dislikes = article.dislikes + 1;
+        state.article.dislikes = state.article.dislikes + 1;
+      }
     }
   },
   extraReducers: builder => {
     builder.addCase(fetchArticleById.fulfilled, (state, action) => {
+      if (!action.payload) return;
       state.article = action.payload;
     });
   }
 });
 
-export const { filterArticle } = articleSlice.actions;
+export const { filterArticle, likeArticle, dislikeArticle } =
+  articleSlice.actions;
 
 export default articleSlice.reducer;
