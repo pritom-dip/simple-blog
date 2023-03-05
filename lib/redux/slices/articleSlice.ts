@@ -22,7 +22,8 @@ const initialState: InitialStateType = {
     tags: [],
     likes: 0,
     dislikes: 0,
-    image: ''
+    image: '',
+    comments: []
   },
   loading: false
 };
@@ -67,6 +68,21 @@ export const articleSlice = createSlice({
         article.dislikes = article.dislikes + 1;
         state.article.dislikes = state.article.dislikes + 1;
       }
+    },
+    makeComment: (state, action: PayloadAction<any>) => {
+      const { comment, articleId, name } = action.payload;
+      const article = state.articles.find(article => article.id === +articleId);
+      if (article) {
+        const id = article.comments?.length || 0;
+        const tempComments = {
+          id,
+          text: comment,
+          user: {
+            name: name
+          }
+        };
+        article.comments?.push(tempComments);
+      }
     }
   },
   extraReducers: builder => {
@@ -77,7 +93,7 @@ export const articleSlice = createSlice({
   }
 });
 
-export const { filterArticle, likeArticle, dislikeArticle } =
+export const { filterArticle, likeArticle, dislikeArticle, makeComment } =
   articleSlice.actions;
 
 export default articleSlice.reducer;

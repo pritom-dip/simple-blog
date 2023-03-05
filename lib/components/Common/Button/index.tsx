@@ -15,7 +15,7 @@ const Button = ({
   };
 
   return (
-    <div onClick={onClick} className={classNames(styles.wrapper)}>
+    <div className={classNames(styles.wrapper)}>
       {loading && <div className={styles.loading}></div>}
       <button
         onClick={handleClick}

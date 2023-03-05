@@ -20,7 +20,8 @@ const articles: IArticleState[] = [
     category: 'sports',
     tags: ['premier league', 'england'],
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    comments: []
   },
   {
     id: 2,
@@ -36,7 +37,8 @@ const articles: IArticleState[] = [
     category: 'news',
     tags: ['la league', 'spain'],
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    comments: []
   },
   {
     id: 3,
@@ -52,7 +54,8 @@ const articles: IArticleState[] = [
     category: 'shopping',
     tags: ['aarong', 'estacy'],
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    comments: []
   },
   {
     id: 4,
@@ -68,7 +71,8 @@ const articles: IArticleState[] = [
     category: 'games',
     tags: ['cricket', 'football'],
     likes: 0,
-    dislikes: 0
+    dislikes: 0,
+    comments: []
   }
 ];
 

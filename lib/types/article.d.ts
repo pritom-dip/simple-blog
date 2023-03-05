@@ -8,6 +8,15 @@ export interface IArticleState {
   createby?: IArticleCreator;
   likes: number;
   dislikes: number;
+  comments: IComment[];
+}
+
+export interface IComment {
+  id: number;
+  text: string;
+  user: {
+    name: string;
+  };
 }
 
 export interface IArticleCreator {
