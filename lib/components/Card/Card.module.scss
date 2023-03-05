@@ -2,12 +2,12 @@
 @import '../../assets/css/mixin';
 
 .cardwrapper {
-  background-color: $card_color;
+  background-color: $paste;
   border-radius: 5px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   padding: 0;
   margin: 10px auto;
-  width: 800px;
+  width: $container_width;
   @include flex;
   @media only screen and (max-width: 992px) {
     width: 100%;
@@ -51,7 +51,7 @@
       align-items: center;
     }
     .category {
-      font-size: 12px;
+      font-size: $small_font_size;
       margin-right: 10px;
     }
     .tags {
@@ -60,11 +60,11 @@
     .badge {
       background-color: $bg_color;
       text-transform: uppercase;
-      color: $primary_color;
+      color: $white;
       padding: 2px 8px;
       border-radius: 70px;
       margin: 0;
-      font-size: 12px;
+      font-size: $small_font_size;
       display: flex;
     }
     .flex {

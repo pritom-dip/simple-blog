@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import _debounce from 'lodash/debounce';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterArticle } from '@/redux/slices/articleSlice';
+import styles from './Search.module.scss';
 
 const Search = () => {
   const [inputText, setInputText] = useState('');
@@ -21,7 +22,7 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Input
         name="search"
         value={inputText}

@@ -1,18 +1,18 @@
 @import '../../../assets/css/variables';
 
 .btn {
-  background-color: $hover_secondary_color;
+  background-color: $light_paste;
   border: none;
   border-radius: 4px;
-  color: $primary_color;
+  color: $white;
   cursor: pointer;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   text-align: center;
   transition: all 0.3s ease;
   &:hover {
-    background-color: $hover_secondary_color;
-    color: $hover_color;
+    background-color: $light_paste;
+    color: $grey;
   }
 }
 

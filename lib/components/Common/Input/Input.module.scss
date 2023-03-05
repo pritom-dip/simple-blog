@@ -9,10 +9,10 @@
   .input {
     background-color: transparent;
     border-radius: 5px;
-    border: 1px solid $primary_color;
+    border: 1px solid $white;
     outline: none;
     padding: 15px;
-    color: $primary_color;
+    color: $white;
     width: 100%;
     &::placeholder {
       color: #ffffff4f;

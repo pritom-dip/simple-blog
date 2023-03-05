@@ -1,8 +1,9 @@
+@import '../../assets/css/variables';
 .wrapper {
-  width: 800px;
+  width: $container_width;
   margin: 0 auto;
   .title {
-    font-size: 24px;
+    font-size: $title_font_size;
     font-weight: 600;
     margin-bottom: 20px;
   }

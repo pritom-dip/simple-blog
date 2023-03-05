@@ -4,7 +4,7 @@
 .wrapper {
   background: url('../../assets/images/hero.png');
   height: 400px;
-  color: $primary_color;
+  color: $white;
   background-repeat: no-repeat;
   background-size: cover;
   @include flex;
@@ -13,14 +13,14 @@
     gap: 10px;
   }
   .headerName {
-    font-size: 24px;
-    color: $hover_color;
+    font-size: $title_font_size;
+    color: $grey;
     font-weight: 400;
     line-height: 72px;
     text-align: center;
   }
   .content {
-    color: $primary_color;
+    color: $white;
     font-size: 18px;
     text-align: center;
   }
