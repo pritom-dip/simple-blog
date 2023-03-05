@@ -1,29 +1,37 @@
 @import '../../assets/css/variables';
+@import '../../assets/css/mixin';
 
 .cardwrapper {
   background-color: $card_color;
   border-radius: 5px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   padding: 0;
-  width: calc(33.33% - 20px);
-  margin: 10px;
+  margin: 10px auto;
+  max-width: 800px;
+  @include flex;
+
   .imageWrapper {
+    width: 30%;
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
+      border-bottom-left-radius: 5px;
     }
   }
 
   .content {
-    display: flex;
-    flex-direction: column;
+    width: 70%;
+    @include flex;
     gap: 10px;
     padding: 20px 15px;
+    flex-grow: 1;
     .title {
       font-size: 1.5rem;
+    }
+    .author {
+      font-size: 14px;
     }
     .description {
       font-size: 1rem;
@@ -31,6 +39,26 @@
     .btnWrapper {
       display: flex;
       align-items: center;
+    }
+    .category {
+      font-size: 12px;
+      margin-right: 10px;
+    }
+    .tags {
+      gap: 5px;
+    }
+    .badge {
+      background-color: $bg_color;
+      text-transform: uppercase;
+      color: $primary_color;
+      padding: 2px 8px;
+      border-radius: 70px;
+      margin: 0;
+      font-size: 12px;
+      display: flex;
+    }
+    .flex {
+      @include flex;
     }
   }
 }

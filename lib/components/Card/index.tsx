@@ -1,27 +1,61 @@
 import { IArticleState } from '@/types/article';
+import classNames from 'classnames';
 import Image from 'next/image';
-import Button from '../Button';
+import Link from 'next/link';
 import styles from './Card.module.scss';
 
 const Card = ({ article }: { article: IArticleState }) => {
-  const { id, description, image, title, category, tags } = article || {};
-
-  const handleClick = () => {
-    console.log('clicked');
-  };
+  const { id, description, image, title, category, tags, createby } =
+    article || {};
 
   return (
-    <div className={styles.cardwrapper}>
+    <div className={classNames(styles.cardwrapper, styles.flex)}>
       <div className={styles.imageWrapper}>
-        <Image src={image} alt={title} />
+        <Link href={`/article/${id}`}>
+          <Image src={image} alt={title} />
+        </Link>
       </div>
 
-      <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
-        <p className={styles.description}>{description}</p>
-        <div className={styles.btnWrapper}>
-          <Button text="Click Here To Submit" onClick={handleClick} />
+      <div
+        className={classNames(
+          styles.content,
+          styles.flex,
+          styles.directionColumn
+        )}
+      >
+        <div>
+          <Link href={`/article/${id}`}>
+            <h3 className={styles.title}>{title}</h3>
+          </Link>
+          <div className={styles.author}>By {createby?.name}</div>
         </div>
+
+        <p className={styles.description}>{description}</p>
+        {category ? (
+          <div className={classNames(styles.flex, styles.alignCenter)}>
+            <span className={styles.category}>Category</span>
+            <span className={styles.badge}>{category}</span>
+          </div>
+        ) : null}
+
+        {tags ? (
+          <div className={classNames(styles.flex, styles.alignCenter)}>
+            <span className={styles.category}>Tags</span>
+            <div
+              className={classNames(
+                styles.tags,
+                styles.flex,
+                styles.alignCenter
+              )}
+            >
+              {tags.map((tag, index) => (
+                <span key={index} className={styles.badge}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

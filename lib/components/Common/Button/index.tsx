@@ -6,8 +6,7 @@ const Button = ({
   text = 'submit',
   onClick,
   classes,
-  loading,
-  loadingIcon
+  loading
 }: IButtonProps) => {
   const handleClick = () => {
     if (onClick) {
@@ -16,8 +15,15 @@ const Button = ({
   };
 
   return (
-    <div className={classNames(styles.btn, classes)} onClick={handleClick}>
-      {text}
+    <div onClick={onClick} className={classNames(styles.wrapper)}>
+      {loading && <div className={styles.loading}></div>}
+      <button
+        onClick={handleClick}
+        disabled={loading}
+        className={classNames(styles.button, classes)}
+      >
+        {text}
+      </button>
     </div>
   );
 };

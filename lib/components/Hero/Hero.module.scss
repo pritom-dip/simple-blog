@@ -1,0 +1,27 @@
+@import '../../assets/css/variables';
+@import '../../assets/css/mixin';
+
+.wrapper {
+  background: url('../../assets/images/hero.png');
+  height: 400px;
+  color: $primary_color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include flex;
+  .mainContent {
+    @include flex;
+    gap: 10px;
+  }
+  .headerName {
+    font-size: 24px;
+    color: $hover_color;
+    font-weight: 400;
+    line-height: 72px;
+    text-align: center;
+  }
+  .content {
+    color: $primary_color;
+    font-size: 18px;
+    text-align: center;
+  }
+}

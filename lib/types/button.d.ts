@@ -3,5 +3,4 @@ export interface IButtonProps {
   onClick: () => void;
   classes?: string;
   loading?: boolean;
-  loadingIcon?: any;
 }

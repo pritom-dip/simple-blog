@@ -5,4 +5,11 @@ export interface IArticleState {
   image: any;
   category?: string;
   tags?: string[];
+  createby?: IArticleCreator;
+}
+
+export interface IArticleCreator {
+  name: string;
+  email: string;
+  image: any;
 }
