@@ -25,7 +25,12 @@ export const userSlice = createSlice({
       state.data = users.find(user => user.name === name) as IUserState;
     },
     likedArticleByUser: (state, action: PayloadAction<string>) => {
-      state.data.likedArticles = [...state.data.likedArticles, action.payload];
+      if (state.data.likedArticles.indexOf(action.payload) === -1) {
+        state.data.likedArticles = [
+          ...state.data.likedArticles,
+          action.payload
+        ];
+      }
     }
   },
   extraReducers: builder => {}
