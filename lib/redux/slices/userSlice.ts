@@ -20,8 +20,8 @@ export const userSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    login: (state, action: PayloadAction<IUserState>) => {
-      const { name } = action.payload;
+    login: (state, action: PayloadAction<string>) => {
+      const name = action.payload;
       state.data = users.find(user => user.name === name) as IUserState;
     },
     likedArticleByUser: (state, action: PayloadAction<string>) => {
@@ -31,6 +31,6 @@ export const userSlice = createSlice({
   extraReducers: builder => {}
 });
 
-export const { likedArticleByUser } = userSlice.actions;
+export const { login, likedArticleByUser } = userSlice.actions;
 
 export default userSlice.reducer;

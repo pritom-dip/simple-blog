@@ -9,6 +9,8 @@ export default function Home() {
     (state: RootState) => state.articles.filterArticles
   );
 
+  const users = useAppSelector((state: RootState) => state.users);
+
   return (
     <>
       <Head>

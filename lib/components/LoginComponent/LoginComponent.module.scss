@@ -1,0 +1,21 @@
+@import '../../assets/css/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  .card {
+    padding: 10px 20px;
+    background-color: $btn_color;
+    color: $primary_color;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+  }
+}

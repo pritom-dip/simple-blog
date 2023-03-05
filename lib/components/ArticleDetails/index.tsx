@@ -8,12 +8,11 @@ import HandIcon from '../../assets/images/hand.png';
 import HandDownIcon from '../../assets/images/handDown.png';
 import { dislikeArticle, likeArticle } from '@/redux/slices/articleSlice';
 import { likedArticleByUser } from '@/redux/slices/userSlice';
+import { IArticleState } from '@/types/article';
 
-const ArticleDetails = () => {
-  const article = useAppSelector((state: RootState) => state.articles.article);
+const ArticleDetails = ({ article }: { article: IArticleState }) => {
+  // const article = useAppSelector((state: RootState) => state.articles.article);
   const user = useAppSelector((state: RootState) => state.users);
-
-  console.log(user);
 
   const dispatch = useAppDispatch();
 

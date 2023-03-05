@@ -6,21 +6,16 @@ import Image from 'next/image';
 
 const menus = [
   {
-    name: 'Menu 1',
-    link: '#',
+    name: 'Home',
+    link: '/',
     submenu: [],
     icon: ''
   },
   {
-    name: 'Menu 2',
-    link: '#',
+    name: 'Profile',
+    link: '/user/:id',
     submenu: [],
     icon: ''
-  },
-  {
-    name: 'Menu 3',
-    link: '#',
-    submenu: []
   }
 ];
 

@@ -3,14 +3,14 @@ import { IUserState } from '@/types/user';
 const users: IUserState[] = [
   {
     id: 1,
-    name: 'John Doe',
-    email: 'johndoe@mail.com',
+    name: 'John',
+    email: 'john@mail.com',
     likedArticles: []
   },
   {
     id: 2,
-    name: 'jane Doe',
-    email: 'janedow@mail.com',
+    name: 'jane',
+    email: 'jane@mail.com',
     likedArticles: []
   },
   {
